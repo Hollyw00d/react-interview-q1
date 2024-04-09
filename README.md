@@ -1,8 +1,17 @@
-# React + Vite
+# react-interview-q1 -- Forked by Matt Jennings
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Instructions
 
-Currently, two official plugins are available:
+Fork this repo first into your own github account. Make sure to thoroughly read the instructions and implement the react component to meet the provided requirements. Send back a link to your cloned repo. You are expected to make implementation choices around customer experience and efficiency. Please make sure to explain your choices in comments.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
+
+Please build the following form component
+![form component mock](./mock.png)
+
+- Name input should be validated using the provided mock API to check whether the chosen name is taken or not.
+- Name input should be validated as the user is typing.
+- Location dropdown options should be fetched using the provided mock API.
+- Component should have a responsive layout
+- Component should be appropriately styled
+- Unit tests are not required
