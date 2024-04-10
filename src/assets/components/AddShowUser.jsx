@@ -8,11 +8,32 @@ export default function AddShowUser() {
   const [nameNotInUse, setnameNotInUse] = useState(true);
   const debouncedname = useDebounce(name, 300);
   const [locations, setLocations] = useState(null);
+  const [users, setUser] = useState([]);
+  let nextId = 0;
 
   const handleNameChange = (e) => {
     const { value } = e.target;
     if (!value) setnameNotInUse(true);
     setName(value);
+  };
+
+  const handleClearBtn = (e) => {
+    e.preventDefault();
+    setName("");
+    setnameNotInUse(true);
+  };
+
+  const handleAddNameSubmit = (e) => {
+    e.preventDefault();
+
+    const isNameFound = users.find((getName) => getName.name === name);
+
+    if (nameNotInUse && !isNameFound) {
+      const location = e.target.elements.location.value;
+      setUser([...users, { id: nextId++, name, location }]);
+    } else {
+      setnameNotInUse(false);
+    }
   };
 
   const nameNotInUseFunc = useMemo(
@@ -48,7 +69,7 @@ export default function AddShowUser() {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleAddNameSubmit}>
         <div className="row mb-3">
           <div className="col-12 col-md-3 d-md-flex justify-content-end align-items-center">
             <h3 className="my-0 text-right">Name</h3>
@@ -98,7 +119,7 @@ export default function AddShowUser() {
 
         <div className="row mb-3">
           <div className="col-12 d-flex justify-content-md-end">
-            <button type="button" className="me-4">
+            <button type="button" className="me-4" onClick={handleClearBtn}>
               Clear
             </button>
             <button type="submit">Add</button>
@@ -106,7 +127,7 @@ export default function AddShowUser() {
         </div>
       </form>
 
-      <UsersAdded />
+      <UsersAdded users={users} />
     </>
   );
 }

@@ -16,6 +16,7 @@ module.exports = {
     "jsx-quotes": ["error", "prefer-double"],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "import/no-absolute-path": "off"
+    "import/no-absolute-path": "off",
+    "no-plusplus": "off"
   }
 };

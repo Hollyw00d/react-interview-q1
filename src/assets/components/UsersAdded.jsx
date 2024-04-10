@@ -1,4 +1,4 @@
-export default function UsersAdded() {
+export default function UsersAdded({ users }) {
   return (
     <div className="row">
       <div className="col-12">
@@ -10,18 +10,12 @@ export default function UsersAdded() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Perry</td>
-              <td>Paris</td>
-            </tr>
-            <tr>
-              <td>Lucy</td>
-              <td>London</td>
-            </tr>
-            <tr>
-              <td>Sarah</td>
-              <td>Seattle</td>
-            </tr>
+            {users.map((user) => (
+              <tr key={user.name}>
+                <td>{user.name}</td>
+                <td>{user.location}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
