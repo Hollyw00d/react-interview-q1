@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getLocations } from "../api/apis";
 
-export default function GetLocations() {
+export default function LocationsField() {
   const [locations, setLocations] = useState([]);
 
   async function getLocationsFunc() {
