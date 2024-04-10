@@ -10,7 +10,7 @@ export default function LocationsField() {
       setLocations(data);
     } catch (error) {
       setLocations(
-        "Something went wrong and the form is not loading correctly."
+        "Something went wrong and locations are not loading correctly."
       );
     }
   }
