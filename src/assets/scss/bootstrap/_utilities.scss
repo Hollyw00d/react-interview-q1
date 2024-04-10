@@ -1,0 +1,16 @@
+@use "colors" as *;
+
+// Custom utilities
+.table-collapse {
+  border-collapse: collapse;
+}
+
+.table-border-style-1 {
+  border: 2px solid $black;
+
+  td,
+  th {
+    border: 0;
+    border-right: 2px solid $black;
+  }
+}
