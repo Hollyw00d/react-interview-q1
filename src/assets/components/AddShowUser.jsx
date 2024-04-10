@@ -80,15 +80,18 @@ export default function AddShowUser() {
           </div>
           {locations && (
             <div className="col-12 col-md-9">
-              <select name="location" id="location" className="p-2 w-100">
-                {locations?.length > 0
-                  ? locations.map((location) => (
+              {locations?.length > 0 ? (
+                <select name="location" id="location" className="p-2 w-100">
+                  {locations?.length > 0 &&
+                    locations.map((location) => (
                       <option value={location} key={location}>
                         {location}
                       </option>
-                    ))
-                  : locations}
-              </select>
+                    ))}
+                </select>
+              ) : (
+                { locations }
+              )}
             </div>
           )}
         </div>
