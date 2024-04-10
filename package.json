@@ -1,21 +1,34 @@
 {
   "name": "react-interview-q1",
-  "version": "1.0.0",
-  "description": "offline react base exercise",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "servers": "concurrently --kill-others \"json-server --host 0.0.0.0 --watch ./db/users.json --port 3001\"  \"json-server --host 0.0.0.0 --watch ./db/locations.json --port 3002\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MasterRyd3l/react-interview-q1.git"
+  "dependencies": {
+    "bootstrap": "5.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "author": "James Duan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MasterRyd3l/react-interview-q1/issues"
-  },
-  "homepage": "https://github.com/MasterRyd3l/react-interview-q1#readme",
   "devDependencies": {
-    "create-react-app": "^5.0.1"
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "prettier": "3.2.5",
+    "sass": "1.74.1",
+    "vite": "5.2.8"
   }
 }
