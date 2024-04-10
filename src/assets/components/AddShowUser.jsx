@@ -6,7 +6,7 @@ import UsersAdded from "./UsersAdded";
 export default function AddShowUser() {
   const [name, setName] = useState("");
   const [nameNotInUse, setnameNotInUse] = useState(true);
-  const debouncedname = useDebounce(name, 300);
+  const debouncedname = useDebounce(name, 200);
   const [locations, setLocations] = useState(null);
   const [users, setUser] = useState([]);
   let nextId = 0;
@@ -41,7 +41,12 @@ export default function AddShowUser() {
       if (!name) return;
       try {
         const isNameValidVar = await isNameValid(name);
-        setnameNotInUse(isNameValidVar);
+        const isNameFound = users.find((getName) => getName.name === name);
+        if (isNameFound) {
+          setnameNotInUse(false);
+        } else {
+          setnameNotInUse(isNameValidVar);
+        }
       } catch (error) {
         setnameNotInUse(true);
       }
