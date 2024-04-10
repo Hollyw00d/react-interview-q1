@@ -1,4 +1,5 @@
 import UsersAdded from "./UsersAdded";
+import GetLocations from "./GetLocations";
 
 export default function AddShowUser() {
   return (
@@ -23,17 +24,8 @@ export default function AddShowUser() {
           <div className="col-12 col-md-3 d-md-flex justify-content-end align-items-center">
             <h3 className="my-0 text-right">Location</h3>
           </div>
-          <div className="col-12 col-md-9">
-            <select name="location" id="location" className="p-2 w-100">
-              <option value="">Choose a Location</option>
-              <option value="Brazil">Brazil</option>
-              <option value="Canada">Canada</option>
-              <option value="China">China</option>
-              <option value="United States of America (USA)">
-                United States of America (USA)
-              </option>
-            </select>
-          </div>
+
+          <GetLocations />
         </div>
 
         <div className="row mb-3">
