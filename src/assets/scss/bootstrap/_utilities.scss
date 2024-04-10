@@ -13,4 +13,14 @@
     border: 0;
     border-right: 2px solid $black;
   }
+
+  tbody {
+    tr {
+      background-color: $white;
+
+      &:nth-child(odd) {
+        background-color: $light-gray;
+      }
+    }
+  }
 }

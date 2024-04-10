@@ -45,7 +45,9 @@ export default function NameField() {
       </div>
       {!nameNotInUse && (
         <div className="col-md-9 offset-md-3 col-12">
-          <p>This name has already been taken.</p>
+          <p className="text-danger" role="alert" aria-live="polite">
+            <strong>This name has already been taken.</strong>
+          </p>
         </div>
       )}
     </>

@@ -10,15 +10,15 @@ export default function UsersAdded() {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-light">
+            <tr>
               <td>Perry</td>
               <td>Paris</td>
             </tr>
-            <tr className="bg-white">
+            <tr>
               <td>Lucy</td>
               <td>London</td>
             </tr>
-            <tr className="bg-light">
+            <tr>
               <td>Sarah</td>
               <td>Seattle</td>
             </tr>
